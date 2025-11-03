@@ -1,0 +1,406 @@
+/* ============================================================
+   PHILADELPHIA BASKETBALL STYLESHEET (Cleaned + Optimized)
+   ============================================================ */
+
+/* === BASE RESET === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* === HEADER === */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #003366;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+header.scrolled {
+  background-color: rgba(0, 34, 68, 0.98);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* === NAVIGATION === */
+.nav-menu {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-menu a.active,
+.nav-menu a:hover {
+  text-decoration: underline;
+}
+
+/* === MOBILE NAV TOGGLE === */
+.nav-toggle {
+  display: none;
+  width: 1.75rem;
+  height: 1.25rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.nav-toggle .bar {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(6px);
+}
+
+.nav-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-6px);
+}
+
+/* === HERO SECTION === */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: brightness(0.85);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 90%;
+}
+
+.hero-overlay h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.hero-overlay p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+/* === FEATURED IMAGE === */
+.featured-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem auto;
+  max-width: 1000px;
+  padding: 1rem;
+}
+
+.featured-image img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
+}
+
+/* === INTRO TEXT === */
+.intro-text {
+  text-align: center;
+  max-width: 800px;
+  margin: 2rem auto 4rem;
+  padding: 0 1rem;
+  color: #003366;
+}
+
+.intro-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.intro-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* === TABS === */
+.tabs {
+  margin-top: 1rem;
+}
+
+.tab-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tab-button {
+  background: #e0e0e0;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.tab-button.active {
+  background: #003366;
+  color: white;
+}
+
+/* Optional: one combined highlight animation */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+  animation: fadeHighlight 0.8s ease-in-out;
+}
+
+@keyframes fadeHighlight {
+  0% { background-color: rgba(255, 235, 59, 0.3); }
+  100% { background-color: transparent; }
+}
+
+/* === DOWNLOAD BUTTON === */
+.download-btn {
+  margin-left: auto;
+  background: #004080;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.download-btn:hover {
+  background: #0055aa;
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === FADE-IN ELEMENTS === */
+.fade-in,
+.fade-in-on-load {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible,
+.fade-in-on-load.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === CALENDAR EMBEDS === */
+iframe {
+  width: 100%;
+  max-width: 1200px;
+  height: 800px;
+  border: none;
+  display: block;
+  margin: 0 auto;
+}
+
+/* === THEME COLORS === */
+body[data-section="men"] {
+  --pulse-start: #003366;
+  --pulse-mid: #0055aa;
+  --pulse-end: #003366;
+}
+
+body[data-section="women"] {
+  --pulse-start: #b0d6f7;
+  --pulse-mid: #7fbce8;
+  --pulse-end: #b0d6f7;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+  header {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  header h1 {
+    font-size: 1.25rem;
+    text-align: center;
+    flex: 1;
+  }
+
+  .nav-toggle {
+    display: flex;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    width: 100%;
+    background: #003366;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    text-align: center;
+    padding: 1rem 0;
+    gap: 1rem;
+    display: none;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .hero {
+    height: 70vh;
+  }
+
+  .hero-overlay {
+    padding: 1.5rem;
+  }
+
+  .hero-overlay h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+
+  .featured-image {
+    margin: 2rem auto;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tab-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .download-btn {
+    margin: 0.5rem 0 0;
+    text-align: center;
+  }
+
+  iframe {
+    height: 600px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  iframe {
+    height: 500px;
+  }
+}
+
+/* === ADDITIONAL SPACING FOR PAGE HEADINGS AND TABS === */
+main h2 {
+  margin-left: 1rem;   /* adds a little horizontal indent */
+  margin-right: 1rem;
+  text-align: left;    /* ensures it doesn’t center by accident */
+}
+
+.tabs,
+.tab-header {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* === CONTACT PAGE SPACING === */
+main.contact {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.contact-info {
+  margin-top: 1.5rem;
+  padding-left: 0.5rem;
+}

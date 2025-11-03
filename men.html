@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Men's Schedules</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-section="men">
+  <header>
+    <h1>Philadelphia Basketball</h1>
+
+     <!-- Mobile menu toggle -->
+     <button class="nav-toggle" aria-label="Toggle menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="men.html" class="active">Men's Schedules</a>
+      <a href="women.html">Women's Schedules</a>
+      <a href="allgames.html">All Games</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Men's Schedules</h2>
+
+    <section class="tabs">
+      <div class="tab-header">
+        <button class="tab-button active" data-tab="men-d1">Division I</button>
+        <button class="tab-button" data-tab="men-d2-d3">Division II & III</button>
+        <button class="tab-button" data-tab="men-highschool">High School</button>
+      </div>
+
+      <div id="men-d1" class="tab-content active">
+        <iframe 
+          src="https://calendar.google.com/calendar/embed?src=381d0fada664fa6b607046c8e224d30f0ff26622e3a2917ec72f43738a862dfc%40group.calendar.google.com&color=%232952A3&src=29a2ca42fbbcd041821388b3931fc2c5295f40db5b8162fa515fdc073d5431aa%40group.calendar.google.com&color=%237AE7BF&src=cb7281b699e3c5b933c3b280cd66fcd93ce89c56d8a3a1fadffef9e182f1173d%40group.calendar.google.com&color=%23A32929&src=b07ff7efdce226569d100a65ee3b0168a107ed1ff6bde13cb79555afac6e8a1d%40group.calendar.google.com&color=%23B1365F&src=b2acad439ca8748ec14cfdd3ff51abba8ab2d1c385b13a66871b1e72ffce31a0%40group.calendar.google.com&color=%239A9CFF&src=6c9c5c03e3c37dc8fd2ba926f601e104bb76b0793427a11556396274eef9c75a%40group.calendar.google.com&color=%23A4BDFC&ctz=America%2FNew_York"
+          style="border:0" width="100%" height="600" frameborder="0" scrolling="no">
+        </iframe>
+      </div>
+
+      <div id="men-d2-d3" class="tab-content">
+        <iframe 
+          src="https://calendar.google.com/calendar/embed?src=444396be61916fa3d37f70c12ddc067979aa09d3c2fa92497b571cec2ecfe178%40group.calendar.google.com&ctz=America%2FNew_York"
+          style="border:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+      </div>
+
+      <div id="men-highschool" class="tab-content">
+        <iframe 
+          src="https://calendar.google.com/calendar/embed?src=29e0e9268461fd6438f7618eb3851c3c1f778c4810c5cdd00cc78a25ee0b46b0%40group.calendar.google.com&ctz=America%2FNew_York"
+          style="border:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+      </div>
+    </section>
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
